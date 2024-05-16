@@ -22,8 +22,8 @@ override.tf.json
 .terraformrc
 terraform.rc
 
-# Ignore the providers.tf file if you're not pushing it to the repository
-providers.tf
+# Ignore the secrets.tfvars file containing secrets
+secrets.tfvars
 
 # Ignore tfplan
 tfplan

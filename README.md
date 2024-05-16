@@ -33,12 +33,12 @@ The project is organized as follows:
    cd domains-management-tf
    ```
 
-2. **Configure the Exoscale Provider:** Create a `providers.tf` file locally with the following content, replacing placeholders with your actual API keys:
+2. **Configure the Exoscale Provider:** Create a `secrets.tfvars` file locally with the following content, replacing placeholders with your actual API keys:
 
    ```
    provider "exoscale" {
-     api_key    = "your-exoscale-api-key"
-     api_secret = "your-exoscale-api-secret"
+     exoscale_api_key    = "your-exoscale-api-key - EXO..."
+     exoscale_api_secret = "your-exoscale-api-secret"
    }
    ```
 
@@ -51,13 +51,13 @@ The project is organized as follows:
 4. **Plan Your Changes:** Preview the changes Terraform / OpenTofu will make based on the current configuration:
 
    ```
-   tofu plan
+   tofu plan -var-file="secrets.tfvars"
    ```
 
 5. **Apply Your Configuration:** Apply the configuration to update the DNS records:
 
    ```
-   tofu apply
+   tofu apply -var-file="secrets.tfvars"
    ```
 
 ### Managing DNS Records
