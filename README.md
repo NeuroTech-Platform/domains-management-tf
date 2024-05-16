@@ -1,0 +1,79 @@
+## Terraform / OpenTofu DNS Management Project
+
+This project utilizes Terraform / OpenTofu to manage DNS records for multiple domains using the Exoscale provider. It is designed to allow easy updates and robust management of A, MX, TXT, and CNAME records across various subdomains.
+There is not yet any CI or automation using public Github workers for security reasons.
+
+### Prerequisites
+
+Before you begin, ensure you have the following installed:
+
+- Terraform / OpenTofu (version 0.12.x or higher)
+- Access to an Exoscale account with API credentials
+
+Note: If your domain is already created in the management portal, you will need to run:
+```
+tofu import exoscale_domain.hbp_link domain_id_or_name_here
+```
+
+### Project Structure
+
+The project is organized as follows:
+
+- `providers.tf` (not included in the repository): Configures the Exoscale provider.
+- `domains.tf`: Contains resources for domain registrations.
+- `records-<domain>.tf`: Each of these files manages the DNS records for a specific domain.
+- `outputs.tf`: Defines outputs that provide information about the DNS records.
+
+### Setup
+
+1. **Clone the Repository:**
+
+   ```
+   git clone https://github.com/NeuroTech-Platform/domains-management-tf
+   cd domains-management-tf
+   ```
+
+2. **Configure the Exoscale Provider:** Create a `providers.tf` file locally with the following content, replacing placeholders with your actual API keys:
+
+   ```
+   provider "exoscale" {
+     api_key    = "your-exoscale-api-key"
+     api_secret = "your-exoscale-api-secret"
+   }
+   ```
+
+3. **Initialize Terraform / OpenTofu:** Run Terraform / OpenTofu to initialize your environment and download the necessary providers:
+
+   ```
+   tofu init
+   ```
+
+4. **Plan Your Changes:** Preview the changes Terraform / OpenTofu will make based on the current configuration:
+
+   ```
+   tofu plan
+   ```
+
+5. **Apply Your Configuration:** Apply the configuration to update the DNS records:
+
+   ```
+   tofu apply
+   ```
+
+### Managing DNS Records
+
+To manage DNS records, edit the corresponding `records-<domain>.tf` files. Each file contains Terraform / OpenTofu resources related to a specific domain. You can add, modify, or remove records by updating these files and then rerunning `tofu apply`.
+
+### Outputs
+
+After applying your Terraform / OpenTofu configuration, outputs defined in `outputs.tf` can be viewed to confirm the details of the DNS records managed by Terraform / OpenTofu:
+
+```
+tofu output
+```
+
+### Best Practices
+
+- **Version Control:** Keep all changes in version control, except for `providers.tf`, to track modifications and revert if necessary.
+- **Secure API Keys:** Never commit your API keys to the repository. Instead, manage them locally or use environment variables.
+- **Regular Updates:** Regularly update your Terraform / OpenTofu configurations and keep up with new releases from the Exoscale provider and Terraform / OpenTofu itself.
