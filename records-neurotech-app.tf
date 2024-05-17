@@ -45,7 +45,7 @@ resource "exoscale_domain_record" "neurotech_app_snow_staging_a" {
   domain      = exoscale_domain.neurotech_app.id
   name        = "snow-staging"
   record_type = "A"
-  content     = "86.119.28.174"
+  content     = "86.119.25.109"
   ttl         = 300
 }
 
