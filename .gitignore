@@ -23,7 +23,7 @@ override.tf.json
 terraform.rc
 
 # Ignore the secrets.tfvars file containing secrets
-secrets.tfvars
+*.tfvars
 
 # Ignore tfplan
 tfplan
