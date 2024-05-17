@@ -16,5 +16,5 @@ output "neurotechapp_name" {
 
 # Example output for a specific record
 output "hbp_link_host_record" {
-  value = "${exoscale_domain_record.redmine.name}.${exoscale_domain.hbp_link.name}"
+  value = "${exoscale_domain_record.hbp_link_redmine.name}.${exoscale_domain.hbp_link.name}"
 }

@@ -1,7 +1,7 @@
 # Main Domain A, MX, and TXT Records
 resource "exoscale_domain_record" "neurotech_app_a" {
   domain      = exoscale_domain.neurotech_app.id
-  name        = "@"
+  name        = ""
   record_type = "A"
   content     = "194.182.163.251"
   ttl         = 3600
@@ -9,7 +9,7 @@ resource "exoscale_domain_record" "neurotech_app_a" {
 
 resource "exoscale_domain_record" "neurotech_app_mx" {
   domain      = exoscale_domain.neurotech_app.id
-  name        = "@"
+  name        = ""
   record_type = "MX"
   prio        = 5
   content     = "parker.dmn.io."
@@ -18,7 +18,7 @@ resource "exoscale_domain_record" "neurotech_app_mx" {
 
 resource "exoscale_domain_record" "neurotech_app_txt" {
   domain      = exoscale_domain.neurotech_app.id
-  name        = "@"
+  name        = ""
   record_type = "TXT"
   content     = "v=spf1 include:_spf.dmn.io ~all"
   ttl         = 3600

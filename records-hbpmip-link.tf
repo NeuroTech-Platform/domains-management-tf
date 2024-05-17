@@ -1,7 +1,7 @@
 # Main Domain Records
 resource "exoscale_domain_record" "hbpmip_link_a" {
   domain      = exoscale_domain.hbpmip_link.id
-  name        = "@"
+  name        = ""
   record_type = "A"
   content     = "148.187.148.239"
   ttl         = 3600
@@ -9,7 +9,7 @@ resource "exoscale_domain_record" "hbpmip_link_a" {
 
 resource "exoscale_domain_record" "hbpmip_link_mx" {
   domain      = exoscale_domain.hbpmip_link.id
-  name        = "@"
+  name        = ""
   record_type = "MX"
   prio        = 10
   content     = "mail1.hbpmip.link."
@@ -18,7 +18,7 @@ resource "exoscale_domain_record" "hbpmip_link_mx" {
 
 resource "exoscale_domain_record" "hbpmip_link_txt" {
   domain      = exoscale_domain.hbpmip_link.id
-  name        = "@"
+  name        = ""
   record_type = "TXT"
   content     = "v=spf1 include:_spf.dmn.io ~all"
   ttl         = 3600
