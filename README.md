@@ -36,10 +36,8 @@ The project is organized as follows:
 2. **Configure the Exoscale Provider:** Create a `secrets.tfvars` file locally with the following content, replacing placeholders with your actual API keys:
 
    ```
-   provider "exoscale" {
-     exoscale_api_key    = "your-exoscale-api-key - EXO..."
-     exoscale_api_secret = "your-exoscale-api-secret"
-   }
+   exoscale_api_key    = "your-exoscale-api-key - EXO..."
+   exoscale_api_secret = "your-exoscale-api-secret"
    ```
 
 3. **Initialize Terraform / OpenTofu:** Run Terraform / OpenTofu to initialize your environment and download the necessary providers:
@@ -77,3 +75,10 @@ tofu output
 - **Version Control:** Keep all changes in version control, except for `providers.tf`, to track modifications and revert if necessary.
 - **Secure API Keys:** Never commit your API keys to the repository. Instead, manage them locally or use environment variables.
 - **Regular Updates:** Regularly update your Terraform / OpenTofu configurations and keep up with new releases from the Exoscale provider and Terraform / OpenTofu itself.
+
+
+### Acknowledgement
+
+This repository is part of a research project that has received funding from the Swiss State Secretariat for Education, Research and Innovation (SERI) as part of the Horizon Europe project “EBRAINS 2.0”, contract number 23.00638
+
+<img src="images/funder_picture.png" alt="SERI funding logo" style="max-width: 700px; width: 100%; height: auto;"/>
