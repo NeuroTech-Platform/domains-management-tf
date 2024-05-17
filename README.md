@@ -1,7 +1,7 @@
 ## Terraform / OpenTofu DNS Management Project
 
 This project utilizes Terraform / OpenTofu to manage DNS records for multiple domains using the Exoscale provider. It is designed to allow easy updates and robust management of A, MX, TXT, and CNAME records across various subdomains.
-There is not yet any CI or automation using public Github workers for security reasons.
+There is not yet any CI or automation using public Github or Terraform workers for security reasons. No evaluation on this regard has been made internally yet.
 
 ### Prerequisites
 
@@ -14,6 +14,7 @@ Note: If your domain is already created in the management portal, you will need 
 ```
 tofu import exoscale_domain.hbp_link domain_id_or_name_here
 ```
+__For internal use:__ You will need Terraform and do `tofu login app.terraform.io` to be able retrieve the `tfstate`. 
 
 ### Project Structure
 
@@ -23,6 +24,7 @@ The project is organized as follows:
 - `domains.tf`: Contains resources for domain registrations.
 - `records-<domain>.tf`: Each of these files manages the DNS records for a specific domain.
 - `outputs.tf`: Defines outputs that provide information about the DNS records.
+- `backend.tf`: Location of our backend for internal use. Other users can adapt this file to their needs or remove it.
 
 ### Setup
 
