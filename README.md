@@ -14,18 +14,19 @@ Note: If your domain is already created in the management portal, you will need 
 ```
 tofu import exoscale_domain.hbp_link domain_id_or_name_here
 ```
-__For internal use:__ You will need Terraform and do `tofu login app.terraform.io` to be able retrieve the `tfstate`. 
+__For internal use:__ You will to do `tofu login app.terraform.io` to be able retrieve the `tfstate`. 
 
 ### Project Structure
 
 The project is organized as follows:
 
-- `providers.tf` (not included in the repository): Configures the Exoscale provider.
+- `providers.tf`: Configures the Exoscale provider.
 - `domains.tf`: Contains resources for domain registrations.
 - `records-<domain>.tf`: Each of these files manages the DNS records for a specific domain.
 - `outputs.tf`: Defines outputs that provide information about the DNS records.
 - `backend.tf`: Location of our backend for internal use. Other users can adapt this file to their needs or remove it.
-
+- `secrets.tfvars` (not included in the repository): Contains the secrets to connect to Exoscale via the provider.
+  
 ### Setup
 
 1. **Clone the Repository:**
@@ -74,7 +75,7 @@ tofu output
 
 ### Best Practices
 
-- **Version Control:** Keep all changes in version control, except for `providers.tf`, to track modifications and revert if necessary.
+- **Version Control:** Keep all changes in version control, except for `*.tfvars`, to track modifications and revert if necessary.
 - **Secure API Keys:** Never commit your API keys to the repository. Instead, manage them locally or use environment variables.
 - **Regular Updates:** Regularly update your Terraform / OpenTofu configurations and keep up with new releases from the Exoscale provider and Terraform / OpenTofu itself.
 
