@@ -131,14 +131,6 @@ resource "exoscale_domain_record" "thehip_app_collab_dev_txt" {
   ttl         = 3600
 }
 
-resource "exoscale_domain_record" "thehip_app_hub_dev_a" {
-  domain      = exoscale_domain.thehip_app.id
-  name        = "hub-dev"
-  record_type = "A"
-  content     = "148.187.148.119"
-  ttl         = 3600
-}
-
 resource "exoscale_domain_record" "thehip_app_dev_id_a" {
   domain      = exoscale_domain.thehip_app.id
   name        = "dev.id"
@@ -160,14 +152,6 @@ resource "exoscale_domain_record" "thehip_app_dev_txt" {
   name        = "dev"
   record_type = "TXT"
   content     = "v=spf1 include:_spf.dmn.io ~all"
-  ttl         = 3600
-}
-
-resource "exoscale_domain_record" "thehip_ocis_dev_a" {
-  domain      = exoscale_domain.thehip_app.id
-  name        = "ocis"
-  record_type = "A"
-  content     = "148.187.151.212"
   ttl         = 3600
 }
 
