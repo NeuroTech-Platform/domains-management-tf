@@ -196,23 +196,6 @@ resource "exoscale_domain_record" "thehip_app_gpu1_wildcard_cname" {
   ttl         = 3600
 }
 
-resource "exoscale_domain_record" "thehip_app_snow_staging_cname" {
-  domain      = exoscale_domain.thehip_app.id
-  name        = "*.snow-staging"
-  record_type = "CNAME"
-  content     = "snow-staging.thehip.app"
-  ttl         = 3600
-}
-
-resource "exoscale_domain_record" "thehip_app_snow_cname" {
-  domain      = exoscale_domain.thehip_app.id
-  name        = "*.snow"
-  record_type = "CNAME"
-  content     = "snow.thehip.app"
-  ttl         = 3600
-}
-
-# Missing Records
 resource "exoscale_domain_record" "thehip_app_github_challenge_txt" {
   domain      = exoscale_domain.thehip_app.id
   name        = "_github-pages-challenge-hip-infrastructure.docs"
