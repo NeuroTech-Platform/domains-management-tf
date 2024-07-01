@@ -236,22 +236,6 @@ resource "exoscale_domain_record" "thehip_app_elk_a" {
   ttl         = 3600
 }
 
-resource "exoscale_domain_record" "thehip_app_es_a" {
-  domain      = exoscale_domain.thehip_app.id
-  name        = "es"
-  record_type = "A"
-  content     = "148.187.149.107"
-  ttl         = 3600
-}
-
-resource "exoscale_domain_record" "thehip_app_kibana_a" {
-  domain      = exoscale_domain.thehip_app.id
-  name        = "kibana"
-  record_type = "A"
-  content     = "148.187.149.107"
-  ttl         = 3600
-}
-
 resource "exoscale_domain_record" "thehip_app_micromed_db_a" {
   domain      = exoscale_domain.thehip_app.id
   name        = "micromed-db"
