@@ -12,7 +12,7 @@ resource "exoscale_domain_record" "thehip_app_mx" {
   name        = ""
   record_type = "MX"
   prio        = 5
-  content     = "parker.dmn.io."
+  content     = "mta-gw.infomaniak.ch."
   ttl         = 3600
 }
 
