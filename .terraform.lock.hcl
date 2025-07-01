@@ -5,6 +5,7 @@ provider "registry.opentofu.org/exoscale/exoscale" {
   version     = "0.59.2"
   constraints = "0.59.2"
   hashes = [
+    "h1:2Ldi7s4zVe6I+YNSbw3my9ZfyXNJ65vcHpl6kYko3HA=",
     "h1:Qkzs+vFWDeHoc3kZIOZsVnvhtBK4tV5dMD6JZm5OkAU=",
     "zh:0ef621a0ad5461bccc52a6be14f02546494bcb8d74c826e0788bf02486ce3058",
     "zh:42919119a3b32a511e5361fc150cd7617ff11384eb884551af9016fa84552457",
