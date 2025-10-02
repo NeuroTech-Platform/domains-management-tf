@@ -45,7 +45,7 @@ resource "exoscale_domain_record" "hbp_link_gitlab" {
   domain      = exoscale_domain.hbp_link.id
   name        = "gitlab"
   record_type = "A"
-  content     = "148.187.143.53"
+  content     = "148.187.27.173"
 }
 
 resource "exoscale_domain_record" "hbp_link_mipns1" {
