@@ -37,7 +37,7 @@ resource "exoscale_domain_record" "thehip_app_collab_a" {
   domain      = exoscale_domain.thehip_app.id
   name        = "collab"
   record_type = "A"
-  content     = "89.145.167.46"
+  content     = "85.217.163.93"
   ttl         = 3600
 }
 
