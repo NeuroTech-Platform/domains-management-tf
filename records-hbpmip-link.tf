@@ -119,6 +119,14 @@ resource "exoscale_domain_record" "epilepsy_cname" {
   ttl         = 3600
 }
 
+resource "exoscale_domain_record" "ecream_cname" {
+  domain      = exoscale_domain.hbpmip_link.id
+  name        = "ecream"
+  record_type = "A"
+  content     = "148.187.143.44"
+  ttl         = 3600
+}
+
 resource "exoscale_domain_record" "handson_cname" {
   domain      = exoscale_domain.hbpmip_link.id
   name        = "handson"
