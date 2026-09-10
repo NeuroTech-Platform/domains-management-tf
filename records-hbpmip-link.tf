@@ -182,3 +182,35 @@ resource "exoscale_domain_record" "tbi_cname" {
   content     = "148.187.143.44"
   ttl         = 3600
 }
+
+resource "exoscale_domain_record" "inference_gsoc_ns1" {
+  domain      = exoscale_domain.hbpmip_link.id
+  name        = "inferencetest"
+  record_type = "NS"
+  content     = "ns-1817.awsdns-35.co.uk"
+  ttl         = 3600
+}
+
+resource "exoscale_domain_record" "inference_gsoc_ns2" {
+  domain      = exoscale_domain.hbpmip_link.id
+  name        = "inferencetest"
+  record_type = "NS"
+  content     = "ns-1309.awsdns-35.org"
+  ttl         = 3600
+}
+
+resource "exoscale_domain_record" "inference_gsoc_ns3" {
+  domain      = exoscale_domain.hbpmip_link.id
+  name        = "inferencetest"
+  record_type = "NS"
+  content     = "ns-683.awsdns-21.net"
+  ttl         = 3600
+}
+
+resource "exoscale_domain_record" "inference_gsoc_ns4" {
+  domain      = exoscale_domain.hbpmip_link.id
+  name        = "inferencetest"
+  record_type = "NS"
+  content     = "ns-378.awsdns-47.com"
+  ttl         = 3600
+}
